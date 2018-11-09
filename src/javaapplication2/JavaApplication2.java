@@ -18,6 +18,7 @@ public class JavaApplication2 {
         System.out.println("Welcome");
         System.out.println("This is memeber 2 work");
         System.out.println("IM yip");
+        System.out.println("IM yip");
     }
     
 }
