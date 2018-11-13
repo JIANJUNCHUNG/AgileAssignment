@@ -405,18 +405,48 @@ public class AddOrder extends javax.swing.JFrame {
 
     private void jtbremoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbremoveActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jtbremoveActionPerformed
-
-    private void jtbconfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbconfirmActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "confirm order");
-        DefaultTableModel dm = (DefaultTableModel)jTable1.getModel();
+         int dialogButton = JOptionPane.YES_NO_OPTION;
+            JOptionPane.showConfirmDialog (null, "Remove items?","WARNING", dialogButton);
+        if(dialogButton == JOptionPane.YES_OPTION) {
+                //System.exit(0);
+                 DefaultTableModel dm = (DefaultTableModel)jTable1.getModel();
 
         for (int i = 0; i < dm.getRowCount(); i++) {
         for (int j = 0; j < dm.getColumnCount(); j++) {
             dm.setValueAt("", i, j);
         }
+            if(dialogButton == JOptionPane.NO_OPTION) {
+                  //remove(dialogButton);
+                }
+              }
+    }
+    }//GEN-LAST:event_jtbremoveActionPerformed
+
+    private void jtbconfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbconfirmActionPerformed
+        // TODO add your handling code here:
+        //JOptionPane.showMessageDialog(null, "confirm order");
+        
+      //  DefaultTableModel dm = (DefaultTableModel)jTable1.getModel();
+
+     //   for (int i = 0; i < dm.getRowCount(); i++) {
+     //   for (int j = 0; j < dm.getColumnCount(); j++) {
+     //       dm.setValueAt("", i, j);
+     //   }
+       // JOptionPane.showConfirmDialog(null, "Confirm order?");
+       int dialogButton = JOptionPane.YES_NO_OPTION;
+            JOptionPane.showConfirmDialog (null, "Are you sure?","WARNING", dialogButton);
+        if(dialogButton == JOptionPane.YES_OPTION) {
+                //System.exit(0);
+                 DefaultTableModel dm = (DefaultTableModel)jTable1.getModel();
+
+        for (int i = 0; i < dm.getRowCount(); i++) {
+        for (int j = 0; j < dm.getColumnCount(); j++) {
+            dm.setValueAt("", i, j);
+        }
+            if(dialogButton == JOptionPane.NO_OPTION) {
+                  //remove(dialogButton);
+                }
+              }
     }
     }//GEN-LAST:event_jtbconfirmActionPerformed
 
