@@ -5,6 +5,8 @@
  */
 package agileui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -16,6 +18,16 @@ public class Customer extends javax.swing.JFrame {
      */
     public Customer() {
         initComponents();
+    }
+    
+    public void Clear(){
+        jtfUser.setText("");
+        jpfPw.setText("");
+        jpfCPW.setText("");
+        jtfName.setText("");
+        jtfPhone.setText("");
+        jtfEmail.setText("");
+        jtaAdd.setText("");
     }
 
     /**
@@ -37,17 +49,17 @@ public class Customer extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        jtfUser = new javax.swing.JTextField();
+        jtfName = new javax.swing.JTextField();
+        jtfPhone = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtaAdd = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        jtfEmail = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jpfPw = new javax.swing.JPasswordField();
+        jpfCPW = new javax.swing.JPasswordField();
 
         jLabel2.setText("jLabel2");
 
@@ -81,54 +93,52 @@ public class Customer extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel9.setText("Confirm Password :");
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Enter ur username");
+        jtfUser.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jtfUser.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("Enter ur Password");
-
-        jTextField3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("Enter ur confirm password");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        jtfName.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jtfName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                jtfNameActionPerformed(evt);
             }
         });
 
-        jTextField4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("Enter ur name");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
+        jtfPhone.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jtfPhone.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jTextField5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setText("Enter ur phone number");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Enter ur address");
-        jScrollPane1.setViewportView(jTextArea1);
+        jtaAdd.setColumns(20);
+        jtaAdd.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jtaAdd.setRows(5);
+        jScrollPane1.setViewportView(jtaAdd);
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel10.setText("Email:");
 
-        jTextField6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setText("Enter ur email address");
+        jtfEmail.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jtfEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton1.setText("SUBMIT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton2.setText("CANCEL");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jpfPw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpfPwActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -149,12 +159,11 @@ public class Customer extends javax.swing.JFrame {
                                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(25, 25, 25)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jpfPw, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtfPhone, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtfName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                                    .addComponent(jtfUser)
+                                    .addComponent(jpfCPW))
                                 .addGap(44, 44, 44))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
@@ -166,7 +175,7 @@ public class Customer extends javax.swing.JFrame {
                                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(24, 24, 24)
@@ -174,7 +183,7 @@ public class Customer extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(257, 257, 257)
                         .addComponent(jLabel3)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,27 +194,27 @@ public class Customer extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel6)
+                            .addComponent(jpfPw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jpfCPW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -229,13 +238,28 @@ public class Customer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void jtfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_jtfNameActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+        JOptionPane.showConfirmDialog(null, "confirm to create?" , "Confirm", JOptionPane.YES_NO_CANCEL_OPTION);
+        Clear();
+        
+        /*if(jtfUser.getText().equals("")||jpfPw.getText().equals("")|| jpfCPW.getText().equals("") ||jtfName.getText().equals("")||jtfPhone.getText().equals("")||jtfEmail..getText().equals("") || jtaAdd.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "All field are required.", "ERROR", JOptionPane.ERROR_MESSAGE);
+    }*/
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jpfPwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpfPwActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jpfPwActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Clear();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,12 +311,12 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JPasswordField jpfCPW;
+    private javax.swing.JPasswordField jpfPw;
+    private javax.swing.JTextArea jtaAdd;
+    private javax.swing.JTextField jtfEmail;
+    private javax.swing.JTextField jtfName;
+    private javax.swing.JTextField jtfPhone;
+    private javax.swing.JTextField jtfUser;
     // End of variables declaration//GEN-END:variables
 }
