@@ -462,11 +462,18 @@ public class AddOrder extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
+        
+        if(jtfno.getText().equals("")&&jtfqty.getText().equals("")&&jtfdate.getText().equals("")&&jtftime.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill in all the field");
+        }
+        else{
+            DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
         dtm.addRow(new String[] { jtfno.getText(), jtfprice.getText(), jtfqty.getText() , jtftotal.getText() , jtfdate.getText() , jtftime.getText() });
 
         JOptionPane.showMessageDialog(null, "Added to purchase");
         
+        }
+            
         
 
     }//GEN-LAST:event_jButton1ActionPerformed
