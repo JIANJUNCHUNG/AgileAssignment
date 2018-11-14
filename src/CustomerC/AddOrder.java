@@ -24,7 +24,7 @@ public class AddOrder extends javax.swing.JFrame {
         //jtfprice.setText("8");
         
         //jtftotal.setText(t);
-        //
+        
             jtftype.setEditable(false);
             jtfprice.setEditable(false);
             jtftotal.setEditable(false);
