@@ -24,16 +24,10 @@ public class AddOrder extends javax.swing.JFrame {
         //jtfprice.setText("8");
         
         //jtftotal.setText(t);
-        if(jtfno.getText().equals("001")){
-            jtftype.setText("Red Rose");
-            jtfprice.setText("8");
-            if(jtfqty.getText().equals("1")){
-                jtftotal.setText("8");
-            }
-            else if(jtfqty.getText().equals("2")){
-                jtftotal.setText("16");
-            }
-        }
+        
+            jtftype.setEditable(false);
+            jtfprice.setEditable(false);
+            jtftotal.setEditable(false);
     }
 
     /**
