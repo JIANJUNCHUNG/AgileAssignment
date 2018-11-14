@@ -5,6 +5,8 @@
  */
 package agileui;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -244,12 +246,33 @@ public class Customer extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(null, "confirm to create?" , "Confirm", JOptionPane.YES_NO_CANCEL_OPTION);
-        Clear();
+        Pattern p = Pattern.compile(".+@.+\\.[a-z]+");
+            Matcher m = p.matcher(jtfEmail.getText());
+        boolean matchFound = m.matches();
         
-        /*if(jtfUser.getText().equals("")||jpfPw.getText().equals("")|| jpfCPW.getText().equals("") ||jtfName.getText().equals("")||jtfPhone.getText().equals("")||jtfEmail..getText().equals("") || jtaAdd.getText().equals("")){
+        //JOptionPane.showConfirmDialog(null, "confirm to create?" , "Confirm", JOptionPane.YES_NO_CANCEL_OPTION);
+        
+        if(jtfUser.getText().equals("")||jpfPw.getText().equals("")||jtfName.getText().equals("")||jtfPhone.getText().equals("")||jtaAdd.getText().equals("")||jtfEmail.getText().equals("")||jpfCPW.getText().equals("")){
             JOptionPane.showMessageDialog(null, "All field are required.", "ERROR", JOptionPane.ERROR_MESSAGE);
-    }*/
+         }
+        
+        if(jtfUser.getText().length() > 15)
+            JOptionPane.showMessageDialog(null, "Username should less than 15 char", "Error", JOptionPane.ERROR_MESSAGE);
+        else if(jpfPw.getText().length() > 10)
+            JOptionPane.showMessageDialog(null, "Password should less than 10 char", "Error", JOptionPane.ERROR_MESSAGE);
+        else if(jpfCPW.getText().length() > 10)
+            JOptionPane.showMessageDialog(null, "Confirm Password should less than 10 char", "Error", JOptionPane.ERROR_MESSAGE);
+        else if(jtfName.getText().length() > 30)
+            JOptionPane.showMessageDialog(null, "Name should less than 30 char", "Error", JOptionPane.ERROR_MESSAGE);
+        else if(!jtfPhone.getText().matches("([0]){1}([1]){1}([0-9]){1}-([0-9]){7}"))
+            JOptionPane.showMessageDialog(null, "Wrong Phone Number format.Please enter again", "Error", JOptionPane.ERROR_MESSAGE);
+        else if(matchFound == false){
+            JOptionPane.showMessageDialog(null, "Wrong Email format. Please enter again", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        else
+            JOptionPane.showMessageDialog(null, "New Customer Added","RECORD ADDED", JOptionPane.INFORMATION_MESSAGE);
+        
+        Clear();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jpfPwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpfPwActionPerformed
